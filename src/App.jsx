@@ -26,6 +26,7 @@ import yesgif8 from "./assets/GifData/Yes/lovecutie3.gif";
 import yesgif9 from "./assets/GifData/Yes/lovecutie9.gif";
 import yesgif10 from "./assets/GifData/Yes/lovecutie6.gif";
 import yesgif11 from "./assets/GifData/Yes/lovecutie4.gif";
+import yesgif12 from "./assets/GifData/Yes/lovecutie2.gif";
 //! no - Gifs Importing
 import nogif0 from "./assets/GifData/No/breakRej0.gif";
 import nogif0_1 from "./assets/GifData/No/breakRej0_1.gif";
@@ -50,7 +51,7 @@ import nomusic3 from "./assets/AudioTracks/Reject_withoutMe.mp3";
 import nomusic4 from "./assets/AudioTracks/Neutral_Base_IHateU.mp3";
 import nomusic5 from "./assets/AudioTracks/Reject1_TooGood.mp3";
 
-const YesGifs = [yesgif0, yesgif1, yesgif2, yesgif3, yesgif4, yesgif5, yesgif6, yesgif7, yesgif8, yesgif9, yesgif10, yesgif11];
+const YesGifs = [yesgif0, yesgif1, yesgif2, yesgif3, yesgif4, yesgif5, yesgif6, yesgif7, yesgif8, yesgif9, yesgif10, yesgif11, yesgif12];
 const NoGifs = [nogif0, nogif0_1, nogif1, nogif2, nogif3, nogif4, nogif5, nogif6, nogif7, nogif8];
 const YesMusic = [yesmusic1, yesmusic3, yesmusic4, yesmusic2];
 const NoMusic = [nomusic1, nomusic2, nomusic3, nomusic4, nomusic5];
@@ -65,7 +66,8 @@ export default function Page() {
   const [yespopupShown, setYesPopupShown] = useState(false);
 
   const gifRef = useRef(null); // Ref to ensure gif plays infinitely
-  const yesButtonSize = noCount * 16 + 16;
+  const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 640;
+  const yesButtonSize = Math.min(noCount * 10 + 16, windowWidth < 640 ? 44 : 80);
 
   const [floatingGifs, setFloatingGifs] = useState([]); // Array to store active floating GIFs
   const generateRandomPositionWithSpacing = (existingPositions) => {
@@ -137,17 +139,17 @@ export default function Page() {
 
   // This ensures the "Yes" gif keeps restarting and playing infinitely
   useEffect(() => {
-    if (gifRef.current && yesPressed && noCount>3) {
+    if (gifRef.current && yesPressed) {
       gifRef.current.src = YesGifs[currentGifIndex];
     }
   }, [yesPressed, currentGifIndex]);
 
-  // Use effect to change the Yes gif every 5 seconds
+  // Use effect to change the Yes gif every 4 seconds
   useEffect(() => {
-    if (yesPressed && noCount>3) {
+    if (yesPressed) {
       const intervalId = setInterval(() => {
         setCurrentGifIndex((prevIndex) => (prevIndex + 1) % YesGifs.length);
-      }, 5000); // Change gif every 5 seconds
+      }, 4000); // Change gif every 4 seconds
 
       // Clear the interval
       return () => clearInterval(intervalId);
@@ -179,13 +181,8 @@ export default function Page() {
   };
   
   const handleYesClick = () => {
-    if(!popupShown){ // Only for Swal Fire Popup
-      setYesPressed(true);
-    }
-    if(noCount>3){
-      setYesPressed(true);
-      playMusic(YesMusic[0], YesMusic); // Play the first "Yes" music by default
-    }
+    setYesPressed(true);
+    playMusic(YesMusic[0], YesMusic);
   };
   
   const playMusic = (url, musicArray) => {
@@ -318,7 +315,7 @@ export default function Page() {
       {noCount > 16 && noCount < 25 && yesPressed == false && <MouseStealing />}
 
       <div className="overflow-hidden flex flex-col items-center justify-center pt-4 min-h-screen selection:bg-rose-600 selection:text-white text-zinc-900 px-4">
-        {yesPressed && noCount>3 ? (
+        {yesPressed ? (
           <>
             <img
               ref={gifRef}

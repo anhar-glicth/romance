@@ -4,19 +4,15 @@ const MarqueeProposal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const sentences = [
-    "You light up my world like no one else.",
-    "Every moment with you feels like magic.",
-    "My world begins and ends with you in it.",
-    "You're the reason my heart beats faster.",
-    "Life feels complete when you're around.",
-    "I can't imagine my future without you.",
-    "You're my sunshine on the darkest days.",
-    "With you, every day is a blessing.",
-    "You’re the missing piece that completes my heart.",
-    "You make even ordinary moments feel extraordinary.",
-    "You make my world brighter and happier.",
-    "You're the dream I never want to wake up from.",
-    "Will you be the love of my life forever?",
+    "Kamu selalu menerangi hariku, Layuza. ✨",
+    "Setiap detik bersamamu terasa sangat istimewa. 💖",
+    "Muhammad Anhar Solihin selalu memikirkanmu. 🌹",
+    "Kamu adalah alasan senyumku setiap hari. 😊",
+    "Kencan bersamamu adalah impian terindahku. ☕✨",
+    "Bersamamu, hari biasa terasa penuh keajaiban. 🌟",
+    "Terima kasih sudah hadir di hidupku, Layuza. 🥰",
+    "Aku janji kencan kita bakal seru dan penuh kenangan manis! 🎉💖",
+    "Maukah kamu jalan kencan bersamaku, Layuza? 🌹✨",
   ];
 
   useEffect(() => {
@@ -29,15 +25,16 @@ const MarqueeProposal = () => {
   return (
     <div
       style={{
-        width: "50%",
-        height: "75px",
-        margin: "50px auto",
+        width: "min(90%, 650px)",
+        height: "65px",
+        margin: "30px auto",
         borderRadius: "25px",
         overflow: "hidden",
         position: "relative",
-        background: "transparent",
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-        border: "4px solid #ffffff",
+        background: "rgba(255, 255, 255, 0.4)",
+        backdropFilter: "blur(8px)",
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+        border: "3px solid #ffffff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -53,13 +50,12 @@ const MarqueeProposal = () => {
       >
         <span
           style={{
-            fontSize: "2rem",
+            fontSize: "clamp(1.25rem, 4vw, 2rem)",
             fontFamily: "Charm, serif", 
-            // fontFamily: "Beau Rivage, serif", 
             fontStyle: "normal",
             fontWeight: "700",
             color: "#191a19",
-            textShadow: "0 4px 8px rgba(0, 0, 0, 0.6)",
+            textShadow: "0 2px 4px rgba(255, 255, 255, 0.8)",
           }}
         >
           {sentences[currentIndex]}
@@ -68,10 +64,10 @@ const MarqueeProposal = () => {
       <style>{`
         @keyframes marquee {
           0% {
-            transform: translateX(100%); /* Start fully off-screen to the right */
+            transform: translateX(100%);
           }
           100% {
-            transform: translateX(-100%); /* End fully off-screen to the left */
+            transform: translateX(-100%);
           }
         }
       `}</style>

@@ -214,31 +214,31 @@ export default function Page() {
   const getNoButtonText = () => {
 
     const phrases = [
-      "No",
-      "Are you sure?",
-      "Really sure?",
-      "Think again!",
-      "Last chance!",
-      "Surely not?",
-      "You might regret this!",
-      "Give it another thought!",
-      "Are you absolutely certain?",
-      "This could be a mistake!",
-      "U Have a heart!💕",
-      "Don't be so cold!",
-      "Wouldn't you reconsider?",
-      "Is that your final answer?",
-      "You're breaking my heart ;(",
-      "But... why? 😢",
-      "Please, pretty please? 💖",
-      "I can't take this! 😫",
-      "Are you sure you want to do this to me? 😢",
-      "You're gonna hurt my feelings! 😥",
-      "I need you to reconsider, like now! 😓",
-      "I believe in you, don't disappoint me! 💔",
-      "My heart says yes, what about yours? ❤️",
-      "Don't leave me hanging! 😬",
-      "Plsss? :( You're breaking my heart 💔",
+      "Enggak 😜",
+      "Yakin nih? 🤔",
+      "Beneran yakin? 🥺",
+      "Pikirin lagi dong! 💭",
+      "Kesempatan terakhir! ⚠️",
+      "Masa enggak sih? 😢",
+      "Nanti kamu nyesel lho! 😜",
+      "Coba pikir-pikir lagi! 💖",
+      "Yakin banget nih? 💔",
+      "Jangan dingin gitu dong! 🥺",
+      "Punya hati kan? 💕",
+      "Kok gitu sih... 😭",
+      "Jangan buat aku sedih! 😥",
+      "Ini jawaban terakhir kamu? 😳",
+      "Hatiku hancur nih ;(",
+      "Tapi... kenapa? 😢",
+      "Kumohon, plisss? 💖",
+      "Aku ga sanggup nih! 😫",
+      "Beneran tega sama aku? 😢",
+      "Muhammad Anhar Solihin udah nungguin lho! 🌹",
+      "Ayo dong kencan bareng! 🥰",
+      "Aku percaya kamu ga setega itu! 💔",
+      "Hatiku bilang 'Mau', gimana hatimu? ❤️",
+      "Jangan biarkan aku digantung! 😬",
+      "Plsss? :( Mau ya kencan bersamaku? 💖",
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
@@ -247,7 +247,7 @@ export default function Page() {
   useEffect(() => {
     if (yesPressed && noCount < 4 && !popupShown) {
       Swal.fire({
-        title: "I love you sooo Much!!!❤️, You’ve stolen my heart completely!!! 🥰💖 But itni pyaari ladki aur itni jaldi haan? Thoda aur nakhre karke mujhe tarpaao na! 🥰✨",
+        title: "Aku sayang banget sama kamu, Layuza! ❤️ Kamu udah mencuri hatiku sepenuhnya! 🥰💖 Tapi cewek secantik kamu masa langsung bilang mau? Godain aku dikit lagi dong dengan pencet 'Enggak'! 🥰✨",
         showClass: {
           popup: `
             animate__animated
@@ -255,8 +255,8 @@ export default function Page() {
             animate__faster
           `
         },
-        width: 700,
-        padding: "2em",
+        width: "min(90vw, 700px)",
+        padding: "1.5em",
         color: "#716add",
         background: `#fff url(${swalbg})`,
         backdrop: `
@@ -274,9 +274,9 @@ export default function Page() {
   useEffect(() => {
     if (yesPressed && noCount > 3 && !yespopupShown) {
       Swal.fire({
-        title: "I love you so much!! ❤️ You are my everything, my joy, my forever. Every moment with you is a memory I’ll cherish forever, and my heart beats only for you.</br> Will you be the love of my life forever?",
-        width: 800,
-        padding: "2em",
+        title: "Makasih banyak ya, Layuza! ❤️ Kamu adalah segalanya buat aku. Setiap momen bersamamu itu sangat berharga.<br/><br/>Muhammad Anhar Solihin janji bakal bikin kencan kita jadi momen paling manis! 🌹✨<br/>Sampai ketemu di kencan kita ya, Princess! 🥰💖",
+        width: "min(90vw, 800px)",
+        padding: "1.5em",
         color: "#716add",
         background: `#fff url(${swalbg})`,
         backdrop: `
@@ -294,9 +294,9 @@ export default function Page() {
   useEffect(() => {
     if (noCount == 25) {
       Swal.fire({
-        title: "My love for you is endless, like the stars in the sky—shining for you every night, even if you don’t always notice. 🌟 I’ll wait patiently, proving every day that you’re my everything. ❤️ Please press ‘Yes’ and let’s make this a forever story. 🥰✨<br/>'True love never gives up; it grows stronger with time.'",
-        width: 850,
-        padding: "2em",
+        title: "Rasa sayanku ke kamu tuh ga ada habisnya, Layuza! 🌟 Muhammad Anhar Solihin bakal sabar nungguin kamu sampai bilang 'Mau'. ❤️ Tekan tombol 'Mau' yaa biar kita bisa jalan kencan bareng! 🥰✨<br/>'Cinta sejati tak pernah menyerah; ia tumbuh semakin kuat seiring waktu.'",
+        width: "min(90vw, 850px)",
+        padding: "1.5em",
         color: "#716add",
         background: `#fff url(${swalbg})`,
         backdrop: `
@@ -313,57 +313,56 @@ export default function Page() {
     <>
       <div className="fixed top-0 left-0 w-screen h-screen -z-10">
         <Spline scene="https://prod.spline.design/oSxVDduGPlsuUIvT/scene.splinecode" />
-        {/* <Spline scene="https://prod.spline.design/ZU2qkrU9Eyt1PHBx/scene.splinecode" /> */}
       </div>
 
       {noCount > 16 && noCount < 25 && yesPressed == false && <MouseStealing />}
 
-      <div className="overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
+      <div className="overflow-hidden flex flex-col items-center justify-center pt-4 min-h-screen selection:bg-rose-600 selection:text-white text-zinc-900 px-4">
         {yesPressed && noCount>3 ? (
           <>
             <img
               ref={gifRef}
-              className="h-[230px] rounded-lg"
+              className="h-[180px] sm:h-[220px] md:h-[250px] rounded-lg object-contain max-w-[85vw]"
               src={YesGifs[currentGifIndex]}
               alt="Yes Response"
             />
-            <div className="text-4xl md:text-6xl font-bold my-2" style={{ fontFamily: "Charm, serif", fontWeight: "700", fontStyle: "normal" }}>I Love You !!!</div>
-            <div  className="text-4xl md:text-4xl font-bold my-1" style={{ fontFamily: "Beau Rivage, serif", fontWeight: "500", fontStyle: "normal" }}> You’re the love of my life. </div> 
+            <div className="text-3xl sm:text-5xl md:text-6xl font-bold my-2 text-center" style={{ fontFamily: "Charm, serif", fontWeight: "700", fontStyle: "normal" }}>Yaaay! Kita Kencan! 🎉💖</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold my-1 text-rose-700 text-center" style={{ fontFamily: "Beau Rivage, serif", fontWeight: "500", fontStyle: "normal" }}> Muhammad Anhar Solihin & Layuza 👩‍❤️‍👨 </div> 
             <WordMareque />
           </>
         ) : (
           <>
             <img
               src={lovesvg}
-              className="fixed animate-pulse top-10 md:left-15 left-6 md:w-40 w-28"
+              className="fixed animate-pulse top-3 left-3 md:top-10 md:left-10 w-20 sm:w-28 md:w-36 pointer-events-none z-10"
               alt="Love SVG"
             />
             <img
               ref={gifRef}
-              className="h-[230px] rounded-lg"
+              className="h-[180px] sm:h-[220px] md:h-[250px] rounded-lg object-contain max-w-[85vw]"
               src={Lovegif}
               alt="Love Animation"
             />
-            <h1 className="text-4xl md:text-6xl my-4 text-center">
-              Will you be my Valentine?
+            <h1 className="text-2xl sm:text-4xl md:text-5xl my-4 text-center font-bold px-2 leading-tight">
+              sayangku, Mau ngga kamu bsk jalan? 🌹✨
             </h1>
-            <div className="flex flex-wrap justify-center gap-2 items-center">
+            <div className="flex flex-wrap justify-center gap-3 items-center max-w-full px-2">
               <button
                 onMouseEnter={handleMouseEnterYes}
                 onMouseLeave={handleMouseLeave}
-                className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mr-4`}
+                className={`bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg mr-2 shadow-lg transition-all max-w-[85vw] break-words`}
                 style={{ fontSize: yesButtonSize }}
                 onClick={handleYesClick}
               >
-                Yes
+                Mau! 🥰
               </button>
               <button
                 onMouseEnter={handleMouseEnterNo}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleNoClick}
-                className="bg-rose-500 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4"
+                className="bg-rose-500 hover:bg-rose-600 rounded-lg text-white font-bold py-2 px-4 shadow-lg transition-all text-base sm:text-lg max-w-[85vw]"
               >
-                {noCount === 0 ? "No" : getNoButtonText()}
+                {noCount === 0 ? "Enggak 😜" : getNoButtonText()}
               </button>
             </div>
             {floatingGifs.map((gif) => (
@@ -371,17 +370,17 @@ export default function Page() {
                 key={gif.id}
                 src={gif.src}
                 alt="Floating Animation"
-                className="absolute w-12 h-12 animate-bounce"
+                className="absolute w-10 h-10 sm:w-12 sm:h-12 animate-bounce"
                 style={gif.style}
               />
             ))}
           </>
         )}
         <button
-          className="fixed bottom-10 right-10 bg-gray-200 p-1 mb-2 rounded-full hover:bg-gray-300"
+          className="fixed bottom-12 right-4 md:bottom-10 md:right-10 bg-white/80 backdrop-blur p-2 rounded-full hover:bg-gray-200 shadow-md z-30"
           onClick={toggleMute}
         >
-          {isMuted ? <BsVolumeMuteFill size={26} /> : <BsVolumeUpFill size={26} />}
+          {isMuted ? <BsVolumeMuteFill size={24} /> : <BsVolumeUpFill size={24} />}
         </button>
         <Footer />
       </div>
@@ -391,26 +390,13 @@ export default function Page() {
 
 const Footer = () => {
   return (
-    <a
-      className="fixed bottom-2 right-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-rose-300"
-      href="https://github.com/UjjwalSaini07"
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
+      className="fixed bottom-2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-2 backdrop-blur-md opacity-95 border py-1 px-3 rounded-full border-rose-300 bg-white/80 text-[11px] sm:text-xs md:text-sm text-zinc-800 shadow z-30 whitespace-nowrap"
     >
-      Made with{" "}
-      <span role="img" aria-label="heart">
-        ❤️
-      </span>
-      {" "}by Ujjwal
-    </a>
+      Dibuat dengan ❤️ oleh <span className="font-semibold text-rose-600">Muhammad Anhar Solihin</span> untuk <span className="font-semibold text-rose-600">Layuza</span>
+    </div>
   );
 };
-
-
-
-
-
-
 
 // ! Pathways-
 // https://app.spline.design/file/48a9d880-40c9-4239-bd97-973aae012ee0

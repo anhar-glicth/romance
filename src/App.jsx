@@ -19,9 +19,7 @@ import yesgif1 from "./assets/GifData/Yes/love2.gif";
 import yesgif2 from "./assets/GifData/Yes/love3.gif";
 import yesgif3 from "./assets/GifData/Yes/love1.gif";
 import yesgif4 from "./assets/GifData/Yes/lovecutie1.gif";
-import yesgif6 from "./assets/GifData/Yes/lovecutie7.gif";
 import yesgif7 from "./assets/GifData/Yes/lovecutie8.gif";
-import yesgif8 from "./assets/GifData/Yes/lovecutie3.gif";
 import yesgif9 from "./assets/GifData/Yes/lovecutie9.gif";
 import yesgif10 from "./assets/GifData/Yes/lovecutie6.gif";
 import yesgif11 from "./assets/GifData/Yes/lovecutie4.gif";
@@ -50,7 +48,7 @@ import nomusic3 from "./assets/AudioTracks/Reject_withoutMe.mp3";
 import nomusic4 from "./assets/AudioTracks/Neutral_Base_IHateU.mp3";
 import nomusic5 from "./assets/AudioTracks/Reject1_TooGood.mp3";
 
-const YesGifs = [yesgif0, yesgif1, yesgif2, yesgif3, yesgif4, yesgif6, yesgif7, yesgif8, yesgif9, yesgif10, yesgif11, yesgif12];
+const YesGifs = [yesgif0, yesgif1, yesgif2, yesgif3, yesgif4, yesgif7, yesgif9, yesgif10, yesgif11, yesgif12];
 const NoGifs = [nogif0, nogif0_1, nogif1, nogif2, nogif3, nogif4, nogif5, nogif6, nogif7, nogif8];
 const YesMusic = [yesmusic1, yesmusic3, yesmusic4, yesmusic2];
 const NoMusic = [nomusic1, nomusic2, nomusic3, nomusic4, nomusic5];
